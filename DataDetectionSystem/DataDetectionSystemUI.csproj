@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{320226EB-E2F1-4FD1-A89C-B32F0E876F53}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DataDetectionSystem</RootNamespace>
+    <AssemblyName>质量检测系统</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kunjuee.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ceTe.DynamicPDF.40, Version=8.0.0.40, Culture=neutral, PublicKeyToken=09b5ce0d5c0a9d8b, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicPDF.8.0.0.0\lib\net40\ceTe.DynamicPDF.40.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="O2S.Components.PDF4NET, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\O2S.Components.PDF4NET\O2S.Components.PDF4NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.8.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.PDF.6.2.0\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=6.2.4.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.PDF.6.2.0\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="进度条显示百分比">
+      <HintPath>..\..\..\进度条显示百分比\进度条显示百分比\bin\Debug\进度条显示百分比.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DPIChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DPIChange.Designer.cs">
+      <DependentUpon>DPIChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index.Designer.cs">
+      <DependentUpon>Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndexWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IndexWindow.Designer.cs">
+      <DependentUpon>IndexWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainUserControl.Designer.cs">
+      <DependentUpon>MainUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\NewDest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\NewDest.Designer.cs">
+      <DependentUpon>NewDest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\CommonSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\CommonSettings.Designer.cs">
+      <DependentUpon>CommonSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\HookSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\HookSettings.Designer.cs">
+      <DependentUpon>HookSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\DirectoriesSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\DirectoriesSettings.Designer.cs">
+      <DependentUpon>DirectoriesSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResultUserControl.Designer.cs">
+      <DependentUpon>ResultUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\VideoSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting\VideoSettings.Designer.cs">
+      <DependentUpon>VideoSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplitPageWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplitPageWindow.Designer.cs">
+      <DependentUpon>SplitPageWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolWindow.Designer.cs">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIUtil.cs" />
+    <Compile Include="VideoDetectionWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoDetectionWindow.Designer.cs">
+      <DependentUpon>VideoDetectionWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DPIChange.resx">
+      <DependentUpon>DPIChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index.resx">
+      <DependentUpon>Index.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndexWindow.resx">
+      <DependentUpon>IndexWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainUserControl.resx">
+      <DependentUpon>MainUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\NewDest.resx">
+      <DependentUpon>NewDest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\CommonSettings.resx">
+      <DependentUpon>CommonSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\HookSettings.resx">
+      <DependentUpon>HookSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\DirectoriesSettings.resx">
+      <DependentUpon>DirectoriesSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultUserControl.resx">
+      <DependentUpon>ResultUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting\VideoSettings.resx">
+      <DependentUpon>VideoSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplitPageWindow.resx">
+      <DependentUpon>SplitPageWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolWindow.resx">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoDetectionWindow.resx">
+      <DependentUpon>VideoDetectionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Men1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Men2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Men3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Men4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Men5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Men6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resizeApi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Del.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hou.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{49dc7bc6-0662-4330-83e0-717150dbe12d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{a221e18e-f828-426b-af6b-f696cbb281a2}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{caf1bc7a-33d0-4e1f-b35a-5901650eb1ec}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\allfiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errfiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbols-icons_32px_1137086_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mp4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订阅.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\关注.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\管理.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\收起.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\展开.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\订阅1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\控制台.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kunjuee.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="kunjuee.ico" />
+    <None Include="Resources\tu4.png" />
+    <None Include="Resources\tu2.png" />
+    <None Include="Resources\tu.png" />
+    <None Include="Resources\jing.png" />
+    <None Include="Resources\timg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
